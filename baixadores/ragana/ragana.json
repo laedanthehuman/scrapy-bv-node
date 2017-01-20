@@ -1,0 +1,50 @@
+{
+   
+    "url":"https://www.hagana-adquirencia.com.br/portal/login/auth",
+    "types":[
+        {
+            "field":"input[id=\"j_username\"]",
+            "value":"boavista"
+        },
+        {
+            "field":"input[id=\"j_password\"]",
+            "value":"123456"
+        },
+        {
+            "field":"input#searchFromData",
+            "value":""
+        },
+        {
+            "field":"input#searchFromData",
+            "value":"date now"
+        }
+    ],
+
+    "clicks":[
+        "input[value=\"Login\"]",
+        "div.item > a[href=\"/portal/areaUsuarioWeb/operacao\"]",
+        "a[href=\"/portal/areaUsuarioWeb/extratoVenda\"]",
+        "input.search",
+        "div.center.buttons > a.download"
+    ],
+    "waits":[
+        "div.item > a[href=\"/portal/areaUsu,arioWeb/operacao\"]",
+        "div.telaMenu",
+        "input#searchFromData",
+        1000,
+        100,
+        3000,
+        1500
+
+    ],
+    "selects":[
+        {
+            "field":"select#searchBaixado",
+            "value":"Ainda não baixado"
+        }
+    ],
+    "checks":[
+        "input#checkAll"
+    ]
+    
+}
