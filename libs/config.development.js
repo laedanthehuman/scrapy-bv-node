@@ -1,4 +1,4 @@
-import logger from './logger';
+const logger = require('./logger');
 module.exports = {
     isTest: false,
     sequelize: {

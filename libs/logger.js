@@ -1,5 +1,5 @@
-import fs from "fs";
-import winston from "winston";
+const fs      = require('fs'),
+      winston = require('winston');
 
 if (!fs.existsSync("logs")) {
   fs.mkdirSync("logs");
