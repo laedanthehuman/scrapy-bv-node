@@ -1,8 +1,10 @@
-import consign from "consign";
-import Sequelize from "sequelize";
-import TipoBaixador from "./enums/tipo-baixador";
-import FileUtils from "./utils/fileutils";
+const consign       = require('consign'),
+      Sequelize     = require('sequelize'),
+      TipoBaixador  = require('./enums/tipo-baixador'),
+      FileUtils     = require('./utils/fileutils');
 require('./utils/function-name');
+
+
 
 const async = require('async');
 const app ={};
