@@ -1,9 +1,12 @@
-import BaixadorRagna from "./ragana-baixador";
-import FileUtils from "../../utils/fileutils"
-import Executor from "../executor";
-import path from "path";
+"use strict";
 
-export default class Ragana extends Executor {
+const path = require('path'),
+      Executor = require('../executor'),
+      FileUtils = require('../../utils/fileutils'),
+      BaixadorRagna = require('./ragana-baixador');
+
+
+class Ragana extends Executor {
     constructor(app, tempdir, configuracaoBaixador) {
         super(app, configuracaoBaixador);
         const baixador = new BaixadorRagna(true, app, configuracaoBaixador);
@@ -15,7 +18,6 @@ export default class Ragana extends Executor {
 
     logica(Ragana) {
         return new Promise(function(resolve, reject) {
-            this = Ragana;
             Ragana.downloadItem(Ragana);
             let now = new Date();
             this.logger.info('Data Local: ' + now);
@@ -63,3 +65,5 @@ export default class Ragana extends Executor {
         });
     }
 }
+
+module.exports = Ragana;

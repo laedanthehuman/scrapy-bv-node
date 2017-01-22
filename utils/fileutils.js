@@ -1,3 +1,5 @@
+"use strict";
+
 const mv = require('mv'),
       mkdirp = require('mkdirp'),
       fs     = require('fs'),

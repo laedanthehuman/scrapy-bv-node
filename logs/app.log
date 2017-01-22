@@ -2872,3 +2872,4 @@
 {"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-20T20:09:15.369Z"}
 {"level":"info","message":"Executando Configuracao 2","timestamp":"2017-01-20T20:09:15.384Z"}
 {"level":"error","message":"Configuracao 1 Executada com erro: Cannot read property 'logger' of undefined","timestamp":"2017-01-20T20:09:15.407Z"}
+{"level":"info","message":"Conectando no banco... Pode demorar alguns segundos","timestamp":"2017-01-22T23:20:24.323Z"}

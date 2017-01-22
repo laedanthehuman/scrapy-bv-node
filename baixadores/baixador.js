@@ -1,7 +1,4 @@
-import Nightmare from 'nightmare';
-import path from "path";
-import fs from "fs";
-import Executor from "./executor";
+"use strict";
 
 const Nightmare = require('nightmare'),
       path      = require('path'),

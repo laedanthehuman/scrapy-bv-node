@@ -1,3 +1,5 @@
+"use strict";
+
 const yauzl      = require('yauzl'),
       fs         = require('fs'),
       path       = require('path'),

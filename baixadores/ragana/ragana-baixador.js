@@ -1,12 +1,14 @@
-import path from 'path';
-import fs from 'fs';
-import winston from 'winston';
-import Baixador from "../baixador";
-import raganaMap from './ragana.json';
-import Nightmare from 'nightmare';
+"use strict";
+
+const path = require('path'),
+      fs   = require('fs'),
+      winston = require('winston'),
+      Nightmare = require('nightmare'), 
+      Baixador = require('../baixador'),
+      raganaMap = require('./ragana.json');
 
 require('nightmare-download-manager')(Nightmare);
-export default class BaixadorRagna extends Baixador {
+class BaixadorRagna extends Baixador {
     constructor (hasToShow,app,configuracaoBaixador) {
         super(hasToShow,app,configuracaoBaixador);
         this.configuracaoBaixador = configuracaoBaixador;
@@ -62,3 +64,5 @@ export default class BaixadorRagna extends Baixador {
     }
 
 }
+
+module.exports = BaixadorRagna;

@@ -1,3 +1,5 @@
+"use strict";
+
 const Checksum      = require('../utils/checksum'),
       FileUtils     = require('../utils/fileutils'),
       ExtractUtils  = require('../utils/extract'),
