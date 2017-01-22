@@ -1,9 +1,10 @@
-import mv from "mv";
-import mkdirp from "mkdirp";
-import fs from "fs";
-import path from "path";
-import rmdir from "rmdir";
-export default class FileUtils {
+const mv = require('mv'),
+      mkdirp = require('mkdirp'),
+      fs     = require('fs'),
+      path   = require('path'),
+      rmdir  = require('rmdir');
+
+class FileUtils {
 
     static removeFile(file) {
         console.log(file);
@@ -37,3 +38,5 @@ export default class FileUtils {
     }
 
 };
+
+module.exports = FileUtils;

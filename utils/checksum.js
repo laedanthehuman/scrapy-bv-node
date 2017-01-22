@@ -1,10 +1,14 @@
-import crypto from "crypto";
-import fs from "fs";
+"use strict";
+
+const crypto = require('crypto'),
+      fs     = require('fs');
 
 function checksum(str, algorithm, encoding) {
     return crypto.createHash(algorithm || 'md5').update(str, 'utf8').digest(encoding || 'hex')
 }
-export default class Checksum {
+
+
+class Checksum {
 
     static generateCheckSum(file) {
         var bufferFile = '';
@@ -20,3 +24,5 @@ export default class Checksum {
     }
 
 }
+
+module.exports = Checksum;

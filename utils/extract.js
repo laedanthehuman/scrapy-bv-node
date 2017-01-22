@@ -1,9 +1,9 @@
-import yauzl from "yauzl";
-import fs from "fs";
-import path from "path";
-import FileUtils from "./fileutils";
-import mkdirp from "mkdirp";
-export default class ExtractUtils {
+const yauzl      = require('yauzl'),
+      fs         = require('fs'),
+      path       = require('path'),
+      FileUtils  = require('./fileutils'),
+      mkdirp     = require('mkdirp');
+class ExtractUtils {
 
     static extractFile(file, output) {
         return new Promise(function(resolve, reject) {
@@ -50,3 +50,5 @@ export default class ExtractUtils {
         });
     }
 }
+
+module.exports = ExtractUtils;
