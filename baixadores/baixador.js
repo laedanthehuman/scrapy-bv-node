@@ -2,7 +2,13 @@ import Nightmare from 'nightmare';
 import path from "path";
 import fs from "fs";
 import Executor from "./executor";
-export default class Baixador extends Executor {
+
+const Nightmare = require('nightmare'),
+      path      = require('path'),
+      fs        = require('fs'),
+      Executor  = require('./executor');    
+
+class Baixador extends Executor {
     constructor(hasToShow,app,configuracaoBaixador) {
         super(app,configuracaoBaixador);
         this.nightmare = new Nightmare({
@@ -41,3 +47,5 @@ export default class Baixador extends Executor {
 
     }
 }
+
+module.exports = Baixador;
