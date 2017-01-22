@@ -1,10 +1,11 @@
-import Checksum from "../utils/checksum";
-import FileUtils from "../utils/fileutils"
-import ExtractUtils from "../utils/extract";
-import copy from "copy";
-import path from "path";
+const Checksum      = require('../utils/checksum'),
+      FileUtils     = require('../utils/fileutils'),
+      ExtractUtils  = require('../utils/extract'),
+      copy          = require('copy'),
+      path          = require('path');
 
-export default class Executor {
+
+class Executor {
     constructor(app, configuracaoBaixador) {
         this.libs = app.libs;
         this.models = app.db.models;
@@ -91,3 +92,5 @@ export default class Executor {
     }
 
 }
+
+module.exports = Executor;
