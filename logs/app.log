@@ -2873,3 +2873,49 @@
 {"level":"info","message":"Executando Configuracao 2","timestamp":"2017-01-20T20:09:15.384Z"}
 {"level":"error","message":"Configuracao 1 Executada com erro: Cannot read property 'logger' of undefined","timestamp":"2017-01-20T20:09:15.407Z"}
 {"level":"info","message":"Conectando no banco... Pode demorar alguns segundos","timestamp":"2017-01-22T23:20:24.323Z"}
+{"level":"info","message":"Conectando no banco... Pode demorar alguns segundos","timestamp":"2017-01-23T11:36:18.436Z"}
+{"level":"info","message":"Baixador Up em Mon Jan 23 2017 08:36:18 GMT-0300 (Hora oficial do Brasil)","timestamp":"2017-01-23T11:36:18.807Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T11:36:18.903Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:03:47 +0000] \"POST / HTTP/1.1\" 404 14\n","timestamp":"2017-01-23T12:03:47.327Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:03:58 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:03:58.973Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:04:37 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:04:37.929Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:06:59.687Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:06:59 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:06:59.708Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:07:56.276Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:07:56 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:07:56.300Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:08:30.527Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:08:30 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:08:30.549Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:09:32.694Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:09:32 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:09:32.716Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:12:21.449Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:12:21 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:12:21.478Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:17:36.060Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:17:36 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:17:36.131Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:17:57.011Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:18:34 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:18:34.523Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:20:09.827Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:20:14 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:20:14.805Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:20:19.094Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:20:24 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:20:24.381Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:20:32.734Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:20:32 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:20:32.747Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T12:20:53.352Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:12:22:18 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T12:22:18.300Z"}
+{"level":"info","message":"Conectando no banco... Pode demorar alguns segundos","timestamp":"2017-01-23T13:22:10.348Z"}
+{"level":"info","message":"Baixador Up em Mon Jan 23 2017 10:22:10 GMT-0300 (Hora oficial do Brasil)","timestamp":"2017-01-23T13:22:10.799Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T13:22:10.896Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:14:23:18 +0000] \"POST / HTTP/1.1\" 400 992\n","timestamp":"2017-01-23T14:23:18.861Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:14:25:19 +0000] \"POST / HTTP/1.1\" 400 992\n","timestamp":"2017-01-23T14:25:19.349Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:14:28:10 +0000] \"POST / HTTP/1.1\" 400 992\n","timestamp":"2017-01-23T14:28:10.650Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:14:32:46 +0000] \"POST / HTTP/1.1\" 400 992\n","timestamp":"2017-01-23T14:32:46.551Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:14:33:24 +0000] \"POST /baixador HTTP/1.1\" 400 992\n","timestamp":"2017-01-23T14:33:24.764Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:14:35:40 +0000] \"POST /baixador HTTP/1.1\" 400 992\n","timestamp":"2017-01-23T14:35:40.715Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:14:36:04 +0000] \"POST /baixador HTTP/1.1\" 400 992\n","timestamp":"2017-01-23T14:36:04.444Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:14:51:02 +0000] \"POST /baixador HTTP/1.1\" 400 992\n","timestamp":"2017-01-23T14:51:02.304Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T14:51:57.495Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:14:52:19 +0000] \"POST /baixador HTTP/1.1\" 500 2002\n","timestamp":"2017-01-23T14:52:19.188Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T14:52:36.354Z"}
+{"level":"info","message":"::1 - - [23/Jan/2017:14:52:39 +0000] \"POST /baixador HTTP/1.1\" 500 -\n","timestamp":"2017-01-23T14:52:39.323Z"}
+{"level":"info","message":"Executando Configuracao 1","timestamp":"2017-01-23T17:14:04.784Z"}
+{"level":"error","message":"Configuracao 1 Executada com erro: Cannot read property 'logger' of undefined","timestamp":"2017-01-23T17:14:04.797Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [23/Jan/2017:17:14:04 +0000] \"POST /baixador HTTP/1.1\" 500 77\n","timestamp":"2017-01-23T17:14:04.820Z"}

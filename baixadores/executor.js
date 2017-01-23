@@ -14,7 +14,7 @@ class Executor {
         this.logger = this.libs.logger;
         this.configuracaoBaixador = configuracaoBaixador;
     }
-
+    
     salvaSucesso(log) {
         let logSucesso = this.models.logBaixadorSucesso.build(log);
         return logSucesso.save();
