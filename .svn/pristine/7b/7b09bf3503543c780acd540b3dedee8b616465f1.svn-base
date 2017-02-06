@@ -1,0 +1,45 @@
+{
+  "name": "baixador",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Baixador automatico de arquivos em sites de operadoras da boavistanet",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run setNodeEnv && forever start index.js --spinSleepTime=3000ms --minUptime=2000ms",
+    "setNodeEnv": "set NODE_ENV=development",
+    "setDebugEnv": "set DEBUG=nightmare*",
+    "dev": "npm run setDebugEnv && npm run setNodeEnv && npm start",
+    "test": "set NODE_ENV=test&& mocha test/**/*.js"
+  },
+  "author": "Manoel José de Freitas Neto",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "checksum": "^0.1.1",
+    "compression": "^1.6.2",
+    "consign": "^0.1.2",
+    "copy": "^0.3.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "helmet": "^3.4.0",
+    "install": "^0.8.4",
+    "jshint": "^2.9.4",
+    "mkdirp": "^0.5.1",
+    "morgan": "^1.7.0",
+    "mv": "^2.1.1",
+    "nightmare": "^2.9.1",
+    "nightmare-download-manager": "^0.2.3",
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",
+    "rmdir": "^1.2.0",
+    "sequelize": "3.23.4",
+    "winston": "^2.3.0",
+    "yauzl": "^2.7.0"
+  },
+  "devDependencies": {
+    "eslint": "3.0.1",
+    "eslint-config-airbnb-base": "4.0.0",
+    "eslint-plugin-import": "1.10.2",
+    "iron-node": "^3.0.16",
+    "mocha": "2.5.3",
+    "nodemon": "1.9.2"
+  }
+}
