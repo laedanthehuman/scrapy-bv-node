@@ -3,26 +3,29 @@
 const path = require('path'),
       fs   = require('fs'),
       winston = require('winston'),
-      Nightmare = require('nightmare'), 
+      Nightmare = require('nightmare'),
       Baixador = require('../baixador'),
+      Service  = require('../service'),
       raganaMap = require('./ragana.json');
 
 require('nightmare-download-manager')(Nightmare);
 class BaixadorRagna extends Baixador {
     constructor (hasToShow,app,configuracaoBaixador) {
         super(hasToShow,app,configuracaoBaixador);
+        this.service = new Service(app,configuracaoBaixador);
         this.configuracaoBaixador = configuracaoBaixador;
         this.configureEvents();
     };
 
     configureEvents(){
+        let BaixadorRagna = this;
         this.nightmare.on('console', console.log.bind(console))
         this.nightmare.on('did-navigate-in-page',(event,url,isMainFrame) =>{
-            this.saveErrorLog({message:`Erro: Navegação indevida: Evento: ${event} Url: ${url}`});
+            BaixadorRagna.service.saveErrorLog({message:`Erro: Navegação indevida: Evento: ${event} Url: ${url}`});
 
         });
         this.nightmare.on('did-get-redirect-request', (event ,oldURL,newUrl,isMainFrame,httpResponseCode,requestMethod,referrer,headers) =>{
-            this.saveErrorLog({message:`Erro: Redirecionamento inesperado de ${oldURL} para ${newUrl} codigo de Response: ${httpResponseCode}`});
+            BaixadorRagna.service.saveErrorLog({message:`Erro: Redirecionamento inesperado de ${oldURL} para ${newUrl} codigo de Response: ${httpResponseCode}`});
         });
     }
 

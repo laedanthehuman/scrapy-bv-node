@@ -3,7 +3,7 @@ const consign       = require('consign'),
       express       = require('express'),
       TipoBaixador  = require('./enums/tipo-baixador'),
       FileUtils     = require('./utils/fileutils');
-require('./utils/function-name');
+
 
 
 

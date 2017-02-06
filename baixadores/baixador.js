@@ -2,12 +2,9 @@
 
 const Nightmare = require('nightmare'),
       path      = require('path'),
-      fs        = require('fs'),
-      Executor  = require('./executor');    
-
-class Baixador extends Executor {
+      fs        = require('fs');
+class Baixador  {
     constructor(hasToShow,app,configuracaoBaixador) {
-        super(app,configuracaoBaixador);
         this.nightmare = new Nightmare({
             show: hasToShow, loadTimeout: 30000, // in ms,
             switches: {

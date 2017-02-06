@@ -3,6 +3,7 @@
 const Checksum      = require('../utils/checksum'),
       FileUtils     = require('../utils/fileutils'),
       ExtractUtils  = require('../utils/extract'),
+      Service       = require('./service'),
       copy          = require('copy'),
       path          = require('path');
 
@@ -10,63 +11,14 @@ const Checksum      = require('../utils/checksum'),
 class Executor {
     constructor(app, configuracaoBaixador) {
         this.libs = app.libs;
-        this.models = app.db.models;
+        this.service = new Service(app,configuracaoBaixador);
         this.logger = this.libs.logger;
         this.configuracaoBaixador = configuracaoBaixador;
     }
-    
-    salvaSucesso(log) {
-        let logSucesso = this.models.logBaixadorSucesso.build(log);
-        return logSucesso.save();
-    }
 
-    salvaErro(log) {
-        let logErro = this.models.logBaixadorErro.build(log);
-        return logErro.save();
-    }
 
-    saveSucessLog() {
-        var checksumArquivo = Checksum.generateCheckSum(`${this.file.get()}`);
-        var now = new Date().toString();
-        var log = {
-            data: now,
-            nome_arquivo: this.file.name,
-            checksum: checksumArquivo,
-            configuracao_baixador_id: this.configuracaoBaixador.id
-        };
-
-        this.salvaSucesso(log).then((log) => {
-            this.logger.info(`Download de ${log.nome_arquivo} em ${log.data} com checksum ${log.checksum} Salvo com sucesso`);
-            return log;
-        }).catch(err => {
-            this.logger.error(`Erro ao salvar o log ${err}`);
-            saveErrorLog(err);
-        });
-    }
-
-    saveErrorLog(erro) {
-        this.logger.error(`${erro.message}`);
-        var now = new Date().toString();
-        var log = {
-            data: now,
-            erro: erro.message,
-            configuracao_baixador_id: this.configuracaoBaixador.id
-        };
-        this.models.logBaixadorErro.destroy({
-            where: {
-                configuracao_baixador_id: this.configuracaoBaixador.id
-            },
-            truncate: true
-        }).then(rows => {
-            this.salvaErro(log).then((log) => {
-                this.logger.info(`Erro ${erro} salvo com sucesso!`);
-            }).catch(err => {
-                this.logger.error(`Erro ao salvar o log ${err}`);
-            });
-        });
-
-    }
     extrairArquivo(file) {
+        let Executor = this;
         ExtractUtils.extractFile(file, this.baixador.workingDir).then((files) => {
             this.logger.info(`${this.file.get()} extraido com sucesso`);
             let Executor = this;
@@ -75,11 +27,11 @@ class Executor {
                 FileUtils.removeFile(this.baixador.workingDir);
             }).catch((err) => {
                 Executor.logger.log('error', 'Erro ao mover arquivos para backup: ' + err);
-                Executor.saveErrorLog(err);
+                Executor.service.saveErrorLog(err);
             })
         }).catch(err => {
-            this.logger.error(`Falha ao extrair arquivo: ${err}`);
-            this.saveErrorLog(err);
+            Executor.logger.error(`Falha ao extrair arquivo: ${err}`);
+            service.saveErrorLog(err);
         });
     }
     moveFile(Executor, files) {

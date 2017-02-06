@@ -1,9 +1,11 @@
 const Ragana = require('../baixadores/ragana/ragna');
 
 
-const TipoBaixador = {
-    0: Ragana
-}
+const TipoBaixador = [
+    Ragana
+]
+
+
 
 
 module.exports = TipoBaixador;

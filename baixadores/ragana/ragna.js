@@ -12,25 +12,28 @@ class Ragana extends Executor {
         const baixador = new BaixadorRagna(true, app, configuracaoBaixador);
         baixador.setWorkingDir(`temp${path.sep}${tempdir}`);
         FileUtils.mkDir(baixador.workingDir);
-        this.file = '';
+        this.file = configuracaoBaixador.pathDestino;
         this.baixador = baixador;
     }
 
-    logica(Ragana) {
+    logica() {
+        let Ragana = this;
         return new Promise(function(resolve, reject) {
             Ragana.downloadItem(Ragana);
             let now = new Date();
-            this.logger.info('Data Local: ' + now);
+            Ragana.logger.info('Data Local: ' + now);
             now.setDate(now.getDate() - 7);
             let date = now.getDate() + '/' + now.getMonth() + 1 + '/' + now.getFullYear();
-            this.logger.info('Data a procurar: ' + date);
+            Ragana.logger.info('Data a procurar: ' + date);
 
-            this.baixador.login().walkToOperacoes().walkToVendas().fillFormVendas(date).downloadFiles().then(() => {
-                this.logger.info(`Finalizado download de arquivos da Ragana em ${now}`);
-                this.extrairArquivo(`${this.file.get()}`);
-                return resolve(this.saveSucessLog());
+            Ragana.baixador.login().walkToOperacoes().walkToVendas().fillFormVendas(date).downloadFiles().then(() => {
+                Ragana.logger.info(`Finalizado download de arquivos da Ragana em ${now}`);
+                Ragana.extrairArquivo(`${Ragana.file.get()}`);
+                return resolve(Ragana.service.saveSucessLog());
             }).catch(function(error) {
-                saveErrorLog({message: `Erro ao finalizar crawler da raganar: ${error}`});
+                Ragana.logger.error(`Finalizado download de arquivos da Ragana em ${now}`);
+
+                Ragana.service.saveErrorLog({message: `Erro ao finalizar crawler da raganar: ${error}`});
                 return reject(error);
             });
 
