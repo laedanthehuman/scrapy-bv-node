@@ -16,9 +16,8 @@ module.exports = app => {
         app.libs.logger.info(`Executando Configuracao ${configuracao.id}`);
         let tipo = configuracao.tipo;
         if (configuracao.ativo) {
-            // configuracao.path_destino = FileUtils.normalizePath(configuracao.path_destino);
             const tipoBaixador = TipoBaixador[tipo];
-            const baixador = new tipoBaixador(app, '', configuracao);
+            const baixador = new tipoBaixador(app, tipoBaixador.nome, configuracao);
             return baixador.logica();
         }
     }
