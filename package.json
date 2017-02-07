@@ -4,7 +4,7 @@
   "description": "Baixador automatico de arquivos em sites de operadoras da boavistanet",
   "main": "index.js",
   "scripts": {
-    "start": "npm run setNodeEnv && forever start index.js --spinSleepTime=3000ms --minUptime=2000ms",
+    "start": "npm run setNodeEnv && node index.js",
     "setNodeEnv": "set NODE_ENV=development",
     "setDebugEnv": "set DEBUG=nightmare*",
     "dev": "npm run setDebugEnv && npm run setNodeEnv && npm start",
