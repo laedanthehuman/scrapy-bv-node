@@ -25,7 +25,8 @@ class BaixadorRagna extends Baixador {
 
         });
         this.nightmare.on('did-get-redirect-request', (event ,oldURL,newUrl,isMainFrame,httpResponseCode,requestMethod,referrer,headers) =>{
-            BaixadorRagna.service.saveErrorLog({message:`Erro: Redirecionamento inesperado de ${oldURL} para ${newUrl} codigo de Response: ${httpResponseCode}`});
+            // BaixadorRagna.service.saveErrorLog({message:`Erro: Redirecionamento inesperado de ${oldURL} para ${newUrl} codigo de Response: ${httpResponseCode}`});
+            
         });
     }
 
