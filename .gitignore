@@ -3,4 +3,5 @@ node_modules
 npm-debug.log
 
 .svn
-baixadores/temp
+baixadores/temp/
+baixadores/Arquivos/
