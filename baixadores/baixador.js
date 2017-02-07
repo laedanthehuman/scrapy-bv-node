@@ -6,7 +6,7 @@ const Nightmare = require('nightmare'),
 class Baixador  {
     constructor(hasToShow,app,configuracaoBaixador) {
         this.nightmare = new Nightmare({
-            show: hasToShow, loadTimeout: 30000, // in ms,
+            show: hasToShow, loadTimeout: 7000, // in ms,
             switches: {
                 'ignore-certificate-errors': true,
                 'enable-logging': true
