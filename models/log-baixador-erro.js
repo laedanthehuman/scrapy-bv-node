@@ -10,6 +10,10 @@ const LogFalha = sequelize.define('log_baixador_erro',{
         },
         erro:{
             type:DataType.STRING(1000)
+        },
+        configuracao_baixador_id:{
+            type:DataType.INTEGER,
+            notNull: true,
         }
 
     });

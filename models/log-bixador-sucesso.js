@@ -13,7 +13,12 @@ module.exports = (sequelize, DataType) => {
         },
         checksum: {
             type: DataType.STRING
+        },
+        configuracao_baixador_id:{
+            type:DataType.INTEGER,
+            notNull: true,
         }
+
 
     });
     return LogSucesso;
