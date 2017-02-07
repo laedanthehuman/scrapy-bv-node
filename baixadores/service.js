@@ -1,5 +1,6 @@
+const Checksum = require('../utils/checksum');
 class Service {
-    constructor(app,cfg) {
+    constructor(app, cfg) {
         this.models = app.db.models;
         this.logger = app.libs.logger;
         this.configuracaoBaixador = cfg;
@@ -14,13 +15,12 @@ class Service {
         return logErro.save();
     }
 
-    saveSucessLog() {
-        var checksumArquivo = Checksum.generateCheckSum(`${this.file.get()}`);
+    saveSucessLog(file) {
         var now = new Date().toString();
         var log = {
             data: now,
-            nome_arquivo: this.file.name,
-            checksum: checksumArquivo,
+            nome_arquivo: file.name,
+            checksum: file.checksum,
             configuracao_baixador_id: this.configuracaoBaixador.id
         };
 
@@ -29,7 +29,7 @@ class Service {
             return log;
         }).catch(err => {
             this.logger.error(`Erro ao salvar o log ${err}`);
-            saveErrorLog(err);
+            this.saveErrorLog(err);
         });
     }
 
@@ -41,18 +41,13 @@ class Service {
             erro: erro.message,
             configuracao_baixador_id: this.configuracaoBaixador.id
         };
-        this.models.log_baixador_erro.destroy({
-            where: {
-                configuracao_baixador_id: this.configuracaoBaixador.id
-            },
-            truncate: true
-        }).then(rows => {
-            this.salvaErro(log).then((log) => {
-                this.logger.info(`Erro ${erro} salvo com sucesso!`);
-            }).catch(err => {
-                this.logger.error(`Erro ao salvar o log ${err}`);
-            });
+
+        this.salvaErro(log).then((log) => {
+            this.logger.info(`Erro ${erro} salvo com sucesso!`);
+        }).catch(err => {
+            this.logger.error(`Erro ao salvar o log ${err}`);
         });
+        throw new Error(erro.message);
 
     }
 }
